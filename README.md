@@ -11,6 +11,8 @@
   - add .env file 
           MNEMONIC="<Your Mnemonic>"
           INFURA_PROJECT_ID="<Your Infura Project ID>"
+  - add a folder named polygon in contracts ./contracts/polygon
+  - copy Romantoken.sol from ./contracts/etheruem and paste in ./contratcs/polygon 
 
 
 
