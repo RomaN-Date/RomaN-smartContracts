@@ -1,0 +1,41 @@
+{
+  "name": "roman-token",
+  "version": "0.1.0",
+  "description": "A dating app for web3",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "truffle test",
+    "test:polygon": "truffle test --config=truffle-config.polygon.js --network=$npm_config_network",
+    "compile:polygon": "truffle compile --config=truffle-config.polygon.js",
+    "migrate:polygon": "truffle migrate --config=truffle-config.polygon.js --network=$npm_config_network"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RomaN-Labs/RomaN-smartContrat.git"
+  },
+  "keywords": [
+    "Matic",
+    "Polygon",
+    "Ethereum",
+    "Truffle",
+    "dapp",
+    "dating for web3"
+  ],
+  "author": "roman-labs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RomaN-Labs/RomaN-smartContract/issues"
+  },
+  "homepage": "https://github.com/RomaN-Labs/RomaN-smartContract/blob/main/README.md",
+  "devDependencies": {
+    "@maticnetwork/maticjs": "^2.0.40",
+    "@truffle/hdwallet-provider": "^1.4.2",
+    "dotenv": "^9.0.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.6.0"
+  }
+}

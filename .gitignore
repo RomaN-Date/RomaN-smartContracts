@@ -1,0 +1,6 @@
+.env
+node_modules
+build
+contracts/ethereum/draft.sol
+contracts/ethereum/artifacts/
+contracts/polygon/artifacts/
