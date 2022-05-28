@@ -1,6 +1,8 @@
 .env
 node_modules
 build
-contracts/ethereum/draft.sol
+
+RomaN.md
+contracts/ethereum/draft*
 contracts/ethereum/artifacts/
 contracts/polygon/artifacts/

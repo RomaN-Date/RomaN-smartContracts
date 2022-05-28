@@ -5,24 +5,21 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 
+import "./RomanUser.sol";
+
 contract RomanToken is ERC721, ERC721URIStorage {
     using Counters for Counters.Counter;
-
-    // user structure
-    struct User {
-        address userId;
-        uint256 nftId;
-        uint8 behavior; // 100% for all users --> decrement by 1% for each time the user is blcoked 
-    }
-
-    // mapping all users --> get address by tokenId
-    mapping(uint => User) private allUsers;
-
+    
     // mapping users minted a token 
     mapping (address => bool) private _minted;
 
     // counter
     Counters.Counter private _tokenIdCounter;
+
+    // init RomanUser contract
+    // @dev TODO add the correct contract adderess after deploy
+    address _rAdd = 0xDA0bab807633f07f013f94DD0E6A4F96F8742B53;
+    RomanUser _r = RomanUser(_rAdd);
 
 
     // constructor --> set counter to 1 ==> first minted token is 1
@@ -65,34 +62,10 @@ contract RomanToken is ERC721, ERC721URIStorage {
         _minted[to] = true;
         _safeMint(to, tokenId);
 
-        // create new user
-        User memory user = User({
-            userId: to,
-            nftId: tokenId,
-            behavior: 100
-        });
-        
-        // add the new user to allUsers array
-        allUsers[tokenId] = user;
-        
-        // return tokenId
-        // @dev ?? maybe return the user structur, bool or nothing??
+        _r.CreateUser(address(to), tokenId, 100);
     }
 
-    // get all users
-    function getAllUsers() public view returns (User[] memory) {
-      User[] memory data = new User[](_tokenIdCounter.current());
-      for (uint i = 0; i < _tokenIdCounter.current(); i++) {
-          User memory user = allUsers[i];
-          data[i] = user;
-      }
-      return data;
-    }
 
-    // get user by tokenId
-    function getUser(uint256 nftID) public view returns(User memory) {
-    return allUsers[nftID];
-    }
 
     // The following functions are overrides required by Solidity.
     function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
@@ -119,13 +92,7 @@ contract RomanToken is ERC721, ERC721URIStorage {
     function burn(uint256 tokenId) public onlyTokenOwner(msg.sender, tokenId) {
         _burn(tokenId);
         _minted[ownerOf(tokenId)] = false;
-        delete allUsers[tokenId];
+        _r.removeUser(tokenId);
     }
-    function blockUser(uint256 _to) public {
-        require(_minted[msg.sender] == true, "Mint a RomanToken first");
-        require(allUsers[_to].userId != msg.sender, "why you are blocking yourself.. !!?" );
-        
-        // @DEV IMPORTANT SECURITY ISSUE ATTENTION underflow
-        allUsers[_to].behavior -= 1;     
-    }   
+
 }
