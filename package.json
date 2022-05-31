@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RomaN-Labs/RomaN-smartContrat.git"
+    "url": "git+https://github.com/RomaN-Date/RomaN-smartContrat.git"
   },
   "keywords": [
     "Matic",
@@ -27,9 +27,9 @@
   "author": "roman-labs",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/RomaN-Labs/RomaN-smartContract/issues"
+    "url": "https://github.com/RomaN-Date/RomaN-smartContracts/issues"
   },
-  "homepage": "https://github.com/RomaN-Labs/RomaN-smartContract/blob/main/README.md",
+  "homepage": "https://github.com/RomaN-Date/RomaN-smartContract/blob/main/README.md",
   "devDependencies": {
     "@maticnetwork/maticjs": "^2.0.40",
     "@truffle/hdwallet-provider": "^1.4.2",

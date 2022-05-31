@@ -11,8 +11,8 @@ contract RomanVault {
     mapping(address => uint) public balances;
 
     // init RomanUser and RomanToken contracts
-    RomanUser _ru = RomanUser(0xf104e44A7d2809E877847bfcF2b9051da89109E4);
-    RomanToken _rt = RomanToken(0xF4217Bc232DDE826Bf8172BDB7b5CdD21e2dddaF);
+    RomanUser _ru = RomanUser(0x2C2EFa09d5f9bCC854A658c6b724d3C6166c91e1);
+    RomanToken _rt = RomanToken(0x7050078cB25665EBffB8C9422a60A205Fe982D7E);
 
     // @dev TODO can use balanceOf function from ERC721 contract
     modifier rDidMint(address add) {

@@ -48,7 +48,7 @@ module.exports = {
         providerOrUrl:
          "https://polygon-mumbai.infura.io/v3/" + infuraProjectId
       }),
-      network_id: 80001,
+      network_id: "80001",
       confirmations: 2,
       timeoutBlocks: 200,
       skipDryRun: true,
