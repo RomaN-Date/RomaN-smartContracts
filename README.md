@@ -1,20 +1,35 @@
+## deployed on polygon testnet - Mumbai
+
+# v 0.1.0
+  # RomaUser contract address
+  https://mumbai.polygonscan.com/address/0x446B5ca5C6a0AB54396295c53b7267Bba20CF07b
+
+  # RomanToken contract address
+  https://mumbai.polygonscan.com/address/0x192848F3496200540A4024297b5D9fCCfFDDbF8f
+
+  # RomanVault contract address
+  https://mumbai.polygonscan.com/address/0x102273F6cD64246Bc6647900a99CC88eBF1FBc02
+
+
+
 ## TODO 
   - update readme.md
   - 
-  - create test.js
+  - add test.js
 
-## testing on ethereum
-  - using ganache on port 8545
-  - using truffle develop 9545
+## testing on localhost
+  - clone the repo, install all dependencies and on the terminal run 'truffle develop'
+  - on the truffle console run 'build' then 'migrate'  
+    - ganache port: 8545
+    - metamask for truffle develop port: 9545
   
-## testing on polygon
+## testing on polygon localhost
   - add .env file 
           MNEMONIC="<Your Mnemonic>"
           INFURA_PROJECT_ID="<Your Infura Project ID>"
-  - add a folder named polygon in contracts ./contracts/polygon
-  - copy Romantoken.sol from ./contracts/etheruem and paste in ./contratcs/polygon 
-
-
+  - run: npm run compile:polygon
+  - run: npm run migrate:polygon --network=(polygon_infura_testnet)
+Read more below ## Polygon PoS Chain
 
 # Polygon Box
 

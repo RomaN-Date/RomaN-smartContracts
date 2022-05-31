@@ -1,6 +1,6 @@
 {
   "name": "roman-token",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A dating app for web3",
   "main": "truffle-config.js",
   "directories": {
