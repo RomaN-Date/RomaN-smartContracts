@@ -1,6 +1,5 @@
 .env
 node_modules
-build
 
 RomaN.md
 contracts/ethereum/draft*
