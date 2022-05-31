@@ -23,7 +23,7 @@ contract RomanToken is ERC721, ERC721URIStorage {
     }
 
     // init RomanUser contract
-    RomanUser _r = RomanUser(0xf104e44A7d2809E877847bfcF2b9051da89109E4);
+    RomanUser _r = RomanUser(0x2C2EFa09d5f9bCC854A658c6b724d3C6166c91e1);
 
     // check if the sender minted a token
     modifier onlyOnce(address _sender) {
